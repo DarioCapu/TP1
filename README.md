@@ -8,6 +8,7 @@
 - **Documentación**
 # 1 IDE
 Se descargó LPCXpreso 8.2.0 y se insatalaron los complementos de OpenOCD, eGit y Yakindu StateChart Tools siguiendo los pasos de la [hoja de ayuda](https://campus.fi.uba.ar/pluginfile.php/307047/mod_resource/content/5/Sistemas_Embebidos-2019_2doC-Instalacion_de_Herramientas-Cruz.pdf) de la materia.
+
 ## 1.1 Firmware
 Utilizando git se descargó el repositorio firmware_v2.
 
@@ -22,3 +23,7 @@ Utilizando git se descargó el repositorio firmware_v2.
 # 3 tickHook
 
 # 4 Portabilidad
+
+# 5 Mensajes de depuración por puerto serie
+
+# 6 Sensado de Push Buttons
