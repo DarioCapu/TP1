@@ -19,7 +19,9 @@ Utilizando git se descargó el repositorio firmware_v2 y se copió el archivo pr
 - $ git status -s
 - $ git checkout master
 - $ cp project.mk.template project.mk
+
 ![Imagen 02 arbol](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/02_firmware_v2.png)
+
 El archivo project.mk se configuró de la siguiente manera:
 - PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky
 - TARGET = lpc4337_m4
