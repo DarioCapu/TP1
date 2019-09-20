@@ -54,6 +54,22 @@
 
 /*==================[external functions definition]==========================*/
 
+#define TP1_1 (1)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky
+					               to PROJECT = projects/SE-2018-TPs/TP1 */
+#define TP1_2 (2)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_01_switches_leds
+					               to PROJECT = projects/SE-2018-TPs/TP1 */
+#define TP1_3 (3)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/tick_01_tickHook
+ 	 	 	 	 	               to PROJECT = projects/SE-2018-TPs/TP1 */
+#define TP1_4 (4)	/* Making portable tickHook & LEDs */
+#define TP1_5 (5)	/* Test DEBUG* functions */
+#define TP1_6 (6)	/* Making portable tickHook & LEDs & Push Buttons */
+
+#define TEST (TP1_2)
+
+
+#if (TEST == TP1_1)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky
+							       to PROJECT = projects/SE-2018-TPs/TP1 */
+
 /* FUNCION PRINCIPAL, PUNTO DE ENTRADA AL PROGRAMA LUEGO DE RESET. */
 int main(void){
 
@@ -81,5 +97,53 @@ int main(void){
       por ningun S.O. */
    return 0 ;
 }
+
+#endif
+
+#if (TEST == TP1_2)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_01_switches_leds
+							       to PROJECT = projects/SE-2018-TPs/TP1 */
+
+/* FUNCION PRINCIPAL, PUNTO DE ENTRADA AL PROGRAMA LUEGO DE RESET. */
+int main(void)
+{
+
+   /* ------------- INICIALIZACIONES ------------- */
+
+   /* Inicializar la placa */
+   boardConfig();
+
+   gpioConfig( GPIO0, GPIO_INPUT );
+
+   gpioConfig( GPIO1, GPIO_OUTPUT );
+
+   /* Variable para almacenar el valor de tecla leido */
+   bool_t valor;
+
+   /* ------------- REPETIR POR SIEMPRE ------------- */
+   while(1) {
+
+      valor = !gpioRead( TEC1 );
+      gpioWrite( LEDB, valor );
+
+      valor = !gpioRead( TEC2 );
+      gpioWrite( LED1, valor );
+
+      valor = !gpioRead( TEC3 );
+      gpioWrite( LED2, valor );
+
+      valor = !gpioRead( TEC4 );
+      gpioWrite( LED3, valor );
+
+      valor = !gpioRead( GPIO0 );
+      gpioWrite( GPIO1, valor );
+
+   }
+
+   /* NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa no es llamado
+      por ningun S.O. */
+   return 0 ;
+}
+
+#endif
 
 /*==================[end of file]============================================*/
