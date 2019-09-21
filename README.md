@@ -41,11 +41,25 @@ Para realizar el **Debug** se hizo click derecho sobre la carpeta *firmware_v2* 
 ![Imagen 03 debug config](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/03_debug_config_1.png)
 ![Imagen 04 debug config](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/04_debug_config_2.png)
 
+Para realizar acciones en el modo debug utilizamos los botones de la barra de tareas, o con los atajos:
+> F5 Step Into
+> F6 Step Over
+
+![Imagen 05 debug acciones](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/05_debug_acciones.png)
+
+Para modificar el código se cambia a la vista de modo debug a modo developer.
+![Imagen 06 debug vistas](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/06_debug_vistas.png)
+
 ## 1.3 Migrar blinky a TP1
-![Imagen 05 blinky](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/05_blinky_TP1.png)
+Se copiaron los archivos del ejemplo blinky a la carpeta *projects/TP1* y se le cambió el nombre de los archivos .c y .h a *TP1*. 
+
+![Imagen 07 blinky](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/07_blinky_TP1.png)
+
+Para hacer un debug primero se cambió, en la ventana de *debug configurations*, la opción 
+Haciendo *Step Into* en la función *boardConfig()* se abre el archivo *sapi_board.c*.
 
 ## 1.4 Repositorio
-![Imagen 06 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/06_repositorio.png)
+![Imagen 08 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_repositorio.png)
 
 # 2 Switches leds
 
