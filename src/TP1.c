@@ -64,7 +64,7 @@
 #define TP1_5 (5)	/* Test DEBUG* functions */
 #define TP1_6 (6)	/* Making portable tickHook & LEDs & Push Buttons */
 
-#define TEST (TP1_3)
+#define TEST (TP1_1)
 
 
 #if (TEST == TP1_1)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky
