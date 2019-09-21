@@ -42,8 +42,8 @@ Para realizar el **Debug** se hizo click derecho sobre la carpeta *firmware_v2* 
 ![Imagen 04 debug config](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/04_debug_config_2.png)
 
 Para realizar acciones en el modo debug utilizamos los botones de la barra de tareas, o con los atajos:
-> F5 Step Into
-> F6 Step Over
+ > F5 Step Into
+ > F6 Step Over
 
 ![Imagen 05 debug acciones](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/05_debug_acciones.png)
 
@@ -57,6 +57,28 @@ Se copiaron los archivos del ejemplo blinky a la carpeta *projects/TP1* y se le 
 
 Para hacer un debug primero se cambió, en la ventana de *debug configurations*, la opción 
 Haciendo *Step Into* en la función *boardConfig()* se abre el archivo *sapi_board.c*.
+
+Función *gpioWrite(gpioMap_t,bool_t)*
+```sh
+bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el estado
+    
+    bool_t ret_val     = 1;   // Valor de retorno
+
+   int8_t pinNamePort = 0;    // Inicializa todas las variables en cero
+   int8_t pinNamePin  = 0;
+
+   int8_t func        = 0;
+
+   int8_t gpioPort    = 0;
+   int8_t gpioPin     = 0;
+
+   gpioObtainPinConfig( pin, &pinNamePort, &pinNamePin, &func, &gpioPort, &gpioPin );
+
+   Chip_GPIO_SetPinState( LPC_GPIO_PORT, gpioPort, gpioPin, value);
+
+   return ret_val;
+}
+```
 
 ## 1.4 Repositorio
 ![Imagen 08 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_repositorio.png)
