@@ -84,7 +84,7 @@ bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el
 ```
 
 ## 1.4 Repositorio
-![Imagen 09 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_repositorio.png)
+![Imagen 09 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/09_repositorio.png)
 
 # 2 Switches leds
 
