@@ -55,7 +55,10 @@ Se copiaron los archivos del ejemplo blinky a la carpeta *projects/TP1* y se le 
 
 ![Imagen 07 blinky](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/07_blinky_TP1.png)
 
-Para hacer un debug primero se cambió, en la ventana de *debug configurations*, la opción 
+Para hacer un debug primero se cambió, en la ventana de *debug configurations*, la opción *C/C++ Application*
+
+![Imagen 08 TP1_debug](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_TP1_debug.png)
+
 Haciendo *Step Into* en la función *boardConfig()* se abre el archivo *sapi_board.c*.
 
 Función *gpioWrite(gpioMap_t,bool_t)*
@@ -81,7 +84,7 @@ bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el
 ```
 
 ## 1.4 Repositorio
-![Imagen 08 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_repositorio.png)
+![Imagen 09 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/08_repositorio.png)
 
 # 2 Switches leds
 
