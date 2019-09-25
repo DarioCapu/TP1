@@ -88,6 +88,47 @@ bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el
 
 # 2 Switches leds
 
+## 2.1 compilacion condicional
+
+Para realizar la compilacion condicional de los codigos fuentes de TP_1 y TP_2 se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1 y TP_2.Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky y #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds.
+En la figura se puede ver como se sombrea la estructura que no va a ser compilada(TP_1).
+
+![Imagen Switches_leds_compilacion_condicional_2_a_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Switches_leds_compilacion_condicional_2_a_1.png)
+
+## 2.2.a funciones
+
+Se pueden visualizar en la siguiente figura las funciones:
+
+boardConfig(); -- configura los pines de entrada y salida de placa
+gpioConfig( GPIO0, GPIO_INPUT ); -- configura el pin del primer parametro(GPIO0) en el modo ingresado como segundo parametro(GPIO_INPUT entrada)
+valor = !gpioRead( TEC1 ); -- lee el valor actual del pin introducido como parametro(TEC1) y retorna FALSE el estado es 1.
+gpioWrite( LEDB, valor ); -- asigna el estado valor al pin introducido en el primer parametro(LEDB)
+
+![Imagen Switches_leds_funciones_2_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Switches_leds_funciones_2_b_1.png)
+
+## 2.2.b constantes,variables
+
+Se pueden visualizar en la siguiente figura las funciones:
+
+GPIO0        -- pin correspondiente a GPIO0
+GPIO_INPUT   -- estado de entrada de un pin GPIO
+GPIO1        -- pin correspondiente a GPIO0
+GPIO_OUTPUT  -- estado de salida de un pin GPIO
+TEC1         -- primer pulsador
+LEDB         -- pin correspondiente a LED azul
+valor        -- variable booleana que se utiliza para el valor de estado de cada pulsador
+TEC2         -- segundo pulsador
+LED1         -- pin correspondiente a LED amarillo
+TEC3         -- tercer pulsador
+LED2         -- pin correspondiente a LED rojo
+TEC4         -- cuarto pulsador
+LED3         -- pin correspondiente a LED verde
+
+
+
+![Imagen Switches_leds_variables_constantes_2_b_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Switches_leds_variables_constantes_2_b_2.png)
+
+
 # 3 tickHook
 
 # 4 Portabilidad
