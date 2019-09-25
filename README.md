@@ -87,10 +87,10 @@ bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el
 Se creó un repositorio en GitHub, y se sincronizó la carpeta *TP1* del proyecto *firmware_v2* utilizando los siguientes comandos
 ```sh
 $ git init
-$ git remote add origin 
+$ git remote add origin https://github.com/DarioCapu/TP1.git
 $ git status
 $ git add .
-$ git commit -m ""
+$ git commit -m "Primer commit. Archivos .c .h y make"
 $ git push -u origin master
 ```
 ![Imagen 09 repositorio](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/09_repositorio.png)
