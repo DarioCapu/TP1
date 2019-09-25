@@ -62,7 +62,7 @@ Para hacer un debug primero se cambió, en la ventana de *debug configurations*,
 Haciendo *Step Into* en la función *boardConfig()* se abre el archivo *sapi_board.c*.
 
 Función *gpioWrite(gpioMap_t,bool_t)*
-```sh
+```C
 bool_t gpioWrite(gpioMap_t pin, bool_t value){ // La función recibe el pin y el estado
     
     bool_t ret_val     = 1;   // Valor de retorno
