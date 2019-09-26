@@ -108,10 +108,12 @@ En la figura se puede ver como se sombrea la estructura que no va a ser compilad
 
 Se pueden visualizar en la siguiente figura las funciones:
 
-boardConfig(); -- configura los pines de entrada y salida de placa
-gpioConfig( GPIO0, GPIO_INPUT ); -- configura el pin del primer parametro(GPIO0) en el modo ingresado como segundo parametro(GPIO_INPUT entrada)
-valor = !gpioRead( TEC1 ); -- lee el valor actual del pin introducido como parametro(TEC1) y retorna FALSE el estado es 1.
-gpioWrite( LEDB, valor ); -- asigna el estado valor al pin introducido en el primer parametro(LEDB)
+| Nombre | Descripción |
+| ------ | ----------- |
+| boardConfig(); | configura los pines de entrada y salida de placa |
+| gpioConfig( GPIO0, GPIO_INPUT ); | configura el pin del primer parametro(GPIO0) en el modo ingresado como segundo parametro(GPIO_INPUT entrada) |
+| valor = !gpioRead( TEC1 ); | lee el valor actual del pin introducido como parametro(TEC1) y retorna FALSE el estado es 1. |
+| gpioWrite( LEDB, valor ); | asigna el estado valor al pin introducido en el primer parametro(LEDB) |
 
 ![Imagen Switches_leds_funciones_2_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Switches_leds_funciones_2_b_1.png)
 
