@@ -209,7 +209,7 @@ Se pueden visualizar en la siguiente figura las funciones:
 |debugPrintConfigUart( UART_USB, 115200 );| funcion que configura el puerto serie y su velocidad |
 |debugPrintString( "DEBUG c/sAPI\r\n" ); | funcion que imprime en el puerto serie lo que recibe por parametro |
 | tickConfig( TICKRATE_MS );|configura la frecuencia de ticks|
-| _WFI() |  |
+| _WFI() | funcion que espera una interrupcion  |
 | gpioToggle(LED3);|activa el pin pasado por parametro |
 
 
@@ -233,3 +233,48 @@ Se pueden visualizar en la siguiente figura las variables y contantes:
 ![Mensajes_de_depuración_por_puerto_serie_5_c_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_c_2.png)
 
 # 6 Sensado de Push Buttons
+
+
+## 6.a compilacion condicional
+
+Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2,TP_3,TP_4,TP_5 y TP_6 se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1,TP_2,TP_3,TP_4,TP_5 y TP_6.Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky , #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds y #if(TEST == TP1_3) #endif para el codigo de tickHoo#if(TEST == TP1_3) #endif para el codigo de tickHookk , #if(TEST == TP1_4) #endif para el codigo de portabilidad, #if(TEST == TP1_5) #endif para el codigo de Mensajes de depuración por puerto serie y #if(TEST == TP1_6) #endif para el codigo de sensado de push buttons.
+
+En la figura se puede ver las etiquetas declaradas para compilar el codigo de Mensajes de depuración por puerto serie.
+
+![Sensado_push_butonns_serie_6_a](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Sensado_push_butonns_serie_6_a.png)
+
+
+## 6.b funciones
+
+Se pueden visualizar en la siguiente figura las funciones:
+
+| Nombre | Descripción |
+| ------ | ----------- |
+| void myTickHook( void *ptr ) | funcion ejecutada con cada tick en este caso el pulsador 1 |
+|debugPrintConfigUart( UART_USB, 115200 );| funcion que configura el puerto serie y su velocidad |
+|debugPrintString( "DEBUG c/sAPI\r\n" ); | funcion que imprime en el puerto serie lo que recibe por parametro |
+| tickConfig( TICKRATE_MS );|configura la frecuencia de ticks|
+| _WFI() | funcion que espera una interrupcion  |
+| gpioToggle(LED3);|activa el pin pasado por parametro |
+
+
+![Sensado_push_butonns_serie_6_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Sensado_push_butonns_serie_6_b_1.png)
+![Sensado_push_butonns_serie_6_b_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Sensado_push_butonns_serie_6_b_2.png)
+![Sensado_push_butonns_serie_6_b_3](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Sensado_push_butonns_serie_6_b_3.png)
+
+## 6.c modificacion de codigo fuente
+
+Se pueden visualizar en la siguiente figura la modificacion correspondiente a la funcion mytickhook:
+
+![Sensado_push_butonns_serie_6_c_](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Sensado_push_butonns_serie_6_c_.png)
+
+## 6.d estados de pulsador
+
+Se pueden visualizar en la siguiente tabla los estados posibles para el pulsador :
+
+| Nombre | Descripción |
+| ------ | ----------- |
+|no oprimido | mantiene el ultimo estado de salida seteado (un solo led encendido)|
+|transicion a oprimido| se activan todos los estados de salida(todos los leds encendidos)|
+|mantener oprimido |Se mantienen todos los estados de salida(todos los leds)|
+|transicion a no oprimido |se desactivan todos los estados de salida excepto el ultimo(un solo led encendido)|
