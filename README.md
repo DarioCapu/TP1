@@ -198,9 +198,9 @@ Se pueden visualizar en la siguiente figura las funciones:
 
 | TICKRATE_MS  | comportamiento |
 | ------ | ----------- |
-| 100 ms|  |
-| 500 ms|  |
-| 1000 ms |  |
+| 1 ms | Secuencia de leds más lenta |
+| 10 ms | Secuencia de leds de velocidad promedio |
+| 100 ms | Secuencia de leds más rápida |
 
 ![portabilidad_4_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_b_1.png)
 
@@ -210,8 +210,8 @@ Se pueden  visualizar en el siguiente cuadro el comportamiento del programa para
 
 | LED_TOGGLE_MS  | comportamiento |
 | ------ | ----------- |
-| 100 ms|  |
-| 500 ms|  |
+| 100 ms |  |
+| 500 ms |  |
 | 1000 ms |  |
 
 ![portabilidad_4_c_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_c_1.png)
