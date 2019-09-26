@@ -64,7 +64,7 @@
 #define TP1_5 (5)	/* Test DEBUG* functions */
 #define TP1_6 (6)	/* Making portable tickHook & LEDs & Push Buttons */
 
-#define TEST (TP1_2)
+#define TEST (TP1_4)
 
 
 #if (TEST == TP1_1)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky
@@ -146,8 +146,8 @@ int main(void)
 
 #endif
 
-#if (TEST == TP1_3)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/tick_01_tickHook
- 	 	 	 	 	               to PROJECT = projects/SE-2018-TPs/TP1 */
+
+#if (TEST == TP1_3)	/* Test & Migrate PROJECT = sapi_examples/edu-ciaa-nxp/bare_metal/tick_01_tickHook     to PROJECT = projects/SE-2018-TPs/TP1 */
 
 /* FUNCION que se ejecuta cada vez que ocurre un Tick. */
 void myTickHook( void *ptr ){
@@ -165,12 +165,9 @@ void myTickHook( void *ptr ){
    gpioWrite( led, ledState );
 }
 
-
 /* FUNCION PRINCIPAL, PUNTO DE ENTRADA AL PROGRAMA LUEGO DE RESET. */
 int main(void){
-
    /* ------------- INICIALIZACIONES ------------- */
-
    /* Inicializar la placa */
    boardConfig();
 
@@ -178,7 +175,6 @@ int main(void){
       periodicamente una interrupcion cada 50ms que incrementa un contador de
       Ticks obteniendose una base de tiempos). */
    tickConfig( 50 );
-
    /* Se agrega ademas un "tick hook" nombrado myTickHook. El tick hook es
       simplemente una funcion que se ejecutara peri�odicamente con cada
       interrupcion de Tick, este nombre se refiere a una funcion "enganchada"
@@ -188,7 +184,6 @@ int main(void){
    */
    tickCallbackSet( myTickHook, (void*)LEDR );
    delay(1000);
-
    /* ------------- REPETIR POR SIEMPRE ------------- */
    while(1) {
       tickCallbackSet( myTickHook, (void*)LEDG );
@@ -209,8 +204,8 @@ int main(void){
       por ningun S.O. */
    return 0 ;
 }
-
 #endif
+
 
 
 #if (TEST == TP1_4)	/* Making portable tickHook & LEDs */
@@ -242,12 +237,10 @@ int main(void) {
 
 	/* Inicializar la placa */
 	boardConfig();
-
 	/* Inicializar el conteo de Ticks con resolucion de 1ms (se ejecuta
        periodicamente una interrupcion cada TICKRATE_MS que incrementa un contador de
        Ticks obteniendose una base de tiempos). */
 	tickConfig( TICKRATE_MS );
-
 	/* Se agrega ademas un "tick hook" nombrado myTickHook. El tick hook es
        simplemente una funcion que se ejecutara peri�odicamente con cada
        interrupcion de Tick, este nombre se refiere a una funcion "enganchada"
@@ -256,17 +249,22 @@ int main(void) {
        al ejecutarse. En este ejemplo se utiliza para pasarle el led a titilar.
 	*/
 	tickCallbackSet( myTickHook, (void*)NULL );
-
 	/* ------------- REPETIR POR SIEMPRE ------------- */
 	while(1) {
 		__WFI();
-
 		if (LED_Time_Flag == true) {
 			LED_Time_Flag = false;
 
 			if (LED_Toggle_Counter == 0) {
 				LED_Toggle_Counter = LED_TOGGLE_MS;
+				gpioToggle(LEDB);
+				delay(LED_TOGGLE_MS);
+				gpioToggle(LED1);
+				delay(LED_TOGGLE_MS);
+				gpioToggle(LED2);
+				delay(LED_TOGGLE_MS);
 				gpioToggle(LED3);
+				delay(LED_TOGGLE_MS);
 			}
 			else
 				LED_Toggle_Counter--;
@@ -277,7 +275,6 @@ int main(void) {
        por ningun S.O. */
 	return 0 ;
 }
-
 #endif
 
 #if (TEST == TP1_5)	/* Test DEBUG* functions */
@@ -311,19 +308,15 @@ int main(void) {
 
 	/* ------------- INICIALIZACIONES ------------- */
 	uint32_t LED_Toggle_Counter = 0;
-
 	/* Inicializar la placa */
 	boardConfig();
-
 	/* UART for debug messages. */
 	debugPrintConfigUart( UART_USB, 115200 );
 	debugPrintString( "DEBUG c/sAPI\r\n" );
-
 	/* Inicializar el conteo de Ticks con resolucion de 1ms (se ejecuta
        periodicamente una interrupcion cada TICKRATE_MS que incrementa un contador de
        Ticks obteniendose una base de tiempos). */
 	tickConfig( TICKRATE_MS );
-
 	/* Se agrega ademas un "tick hook" nombrado myTickHook. El tick hook es
        simplemente una funcion que se ejecutara peri�odicamente con cada
        interrupcion de Tick, este nombre se refiere a una funcion "enganchada"
@@ -332,14 +325,11 @@ int main(void) {
        al ejecutarse. En este ejemplo se utiliza para pasarle el led a titilar.
 	*/
 	tickCallbackSet( myTickHook, (void*)NULL );
-
 	/* ------------- REPETIR POR SIEMPRE ------------- */
 	while(1) {
 		__WFI();
-
 		if (LED_Time_Flag == true) {
 			LED_Time_Flag = false;
-
 			if (LED_Toggle_Counter == 0) {
 				LED_Toggle_Counter = LED_TOGGLE_MS;
 				gpioToggle(LED3);
@@ -349,7 +339,6 @@ int main(void) {
 				LED_Toggle_Counter--;
 		}
 	}
-
 	/* NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa no es llamado
        por ningun S.O. */
 	return 0 ;
@@ -357,7 +346,11 @@ int main(void) {
 
 #endif
 
-#if (TEST == TP1_6)	/* Making portable tickHook & LEDs & Push Buttons */
+
+
+#if (TEST == TP1_6)
+
+/* Making portable tickHook & LEDs & Push Buttons */
 
 /* The DEBUG* functions are sAPI debug print functions.
    Code that uses the DEBUG* functions will have their I/O routed to
@@ -386,10 +379,11 @@ void myTickHook( void *ptr ) {
 	LED_Time_Flag = true;
 	BUTTON_Time_Flag = true;
 
-    if (!gpioRead( TEC1 ))
+    if (!gpioRead( TEC1 )||!gpioRead( TEC2 )||!gpioRead( TEC3 )||!gpioRead( TEC4))
 		BUTTON_Status_Flag = true;
 	else
 		BUTTON_Status_Flag = false;
+
 
 }
 
@@ -457,6 +451,5 @@ int main(void) {
 }
 
 #endif
-
 
 /*==================[end of file]============================================*/
