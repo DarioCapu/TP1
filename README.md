@@ -144,6 +144,50 @@ Se pueden visualizar en la siguiente figura las funciones:
 
 # 3 tickHook
 
+# 3 tickHook
+
+## 3.1 compilacion condicional
+
+Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2 y TP_3 se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1,TP_2 y TP_3.Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky , #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds y #if(TEST == TP1_3) #endif para el codigo de tickHook.
+
+En la figura se puede ver las etiquetas declaradas para compilar el codigo de tickHook.
+
+![tickHooks_3_a_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/tickHooks_3_a_1.png)
+
+
+## 3.2.a funciones
+
+Se pueden visualizar en la siguiente figura las funciones:
+
+| Nombre | Descripción |
+| ------ | ----------- |
+| void myTickHook( void *ptr ) | funcion ejecutada con cada tick |
+| gpioWrite( LEDB, valor ); | asigna el estado valor al pin introducido en el primer parametro(LEDB) |
+|tickConfig( 50 ); | Inicializar el conteo de Ticks con resolucion de 50ms (se ejecuta periodicamente una interrupcion cada 50ms que incrementa un contador de Ticks obteniendose una base de tiempos). |
+| tickCallbackSet( myTickHook, (void*)LEDR );|ejecuta la funcion myTickHook con el parametro (void*)LEDR con una freceuncia determinada en tickConfig( 50 )|
+
+
+![tickHooks_3_b_1_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/tickHooks_3_b_1_1.png)
+
+![tickHooks_3_b_1_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/tickHooks_3_b_1_2.png)
+
+## 3.2.b constantes,variables
+
+Se pueden visualizar en la siguiente figura las variables y contantes:
+
+| Nombre | Descripción |
+| ------ | ----------- |
+| ledState = OFF | variable booleana para indicar el estado del led |
+| gpioMap_t led = (gpioMap_t)ptr;|  estructura con la configuracion de un pin|
+| OFF | constante utilizada para indicar que un led esta apagado |
+| LEDG | pin correspondiente a LED verde |
+| LEDR  | pin correspondiente a LED rojo |
+
+
+![tickHooks_3_b_2_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/tickHooks_3_b_2_1.png)
+
+![tickHooks_3_b_2_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/tickHooks_3_b_2_2.png)
+
 # 4 Portabilidad
 
 # 5 Mensajes de depuración por puerto serie
