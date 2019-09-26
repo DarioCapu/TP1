@@ -188,6 +188,39 @@ Se pueden visualizar en la siguiente figura las variables y contantes:
 
 # 4 Portabilidad
 
+## 4.a compilacion condicional
+Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2,TP_3 y TP_4  se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1,TP_2,TP_3 y TP_4 .Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky , #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds y #if(TEST == TP1_3) #endif para el codigo de tickHoo#if(TEST == TP1_3) #endif y  para el codigo de tickHookk , #if(TEST == TP1_4) #endif para el codigo de portabilidad .
+
+![Mensajes_de_depuración_por_puerto_serie_5_a_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_a_1.png)
+
+## 4.b configuracion tickhook con la constante TICKRATE_MS
+Se pueden visualizar en la siguiente figura las funciones:
+
+| TICKRATE_MS  | comportamiento |
+| ------ | ----------- |
+| 100 ms|  |
+| 500 ms|  |
+| 1000 ms |  |
+
+![portabilidad_4_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_b_1.png)
+
+## 4.c configuracion tickhook con la constante LED_TOGGLE_MS
+
+Se pueden  visualizar en el siguiente cuadro el comportamiento del programa para los diferentes casos en que varia la constante LED_TOGGLE_MS :
+
+| LED_TOGGLE_MS  | comportamiento |
+| ------ | ----------- |
+| 100 ms|  |
+| 500 ms|  |
+| 1000 ms |  |
+
+![portabilidad_4_c_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_c_1.png)
+
+## 4.d modificacion codigo fuente
+Se puede ver en la figura la modificacion del codigo fuente para que soprte todos los LEDS:
+
+![portabilidad_4_d_](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_d_.png)
+
 # 5 Mensajes de depuración por puerto serie
 
 ## 5.a compilacion condicional
