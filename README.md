@@ -144,8 +144,6 @@ Se pueden visualizar en la siguiente figura las funciones:
 
 # 3 tickHook
 
-# 3 tickHook
-
 ## 3.1 compilacion condicional
 
 Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2 y TP_3 se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1,TP_2 y TP_3.Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky , #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds y #if(TEST == TP1_3) #endif para el codigo de tickHook.
@@ -191,5 +189,47 @@ Se pueden visualizar en la siguiente figura las variables y contantes:
 # 4 Portabilidad
 
 # 5 Mensajes de depuración por puerto serie
+
+## 5.a compilacion condicional
+
+Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2,TP_3,TP_4 y TP_5 se declarararon previamente las etiquetas TEST(asignando la etiqueta correspondinte al codigo a compilar) TP_1,TP_2,TP_3,TP_4 y TP_5.Luego se utilizaron las directivas del preprocesador #if(TEST == TP1_1) #endif para el codigo de blinky , #if(TEST == TP1_2) #endif para el codigo de blinkyswitches_leds y #if(TEST == TP1_3) #endif para el codigo de tickHoo#if(TEST == TP1_3) #endif para el codigo de tickHookk , #if(TEST == TP1_4) #endif para el codigo de portabilidad y #if(TEST == TP1_5) #endif para el codigo de Mensajes de depuración por puerto serie.
+
+En la figura se puede ver las etiquetas declaradas para compilar el codigo de Mensajes de depuración por puerto serie.
+
+![Mensajes_de_depuración_por_puerto_serie_5_a_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_a_1.png)
+
+
+## 5.c.1 funciones
+
+Se pueden visualizar en la siguiente figura las funciones:
+
+| Nombre | Descripción |
+| ------ | ----------- |
+| void myTickHook( void *ptr ) | funcion ejecutada con cada tick |
+|debugPrintConfigUart( UART_USB, 115200 );| funcion que configura el puerto serie y su velocidad |
+|debugPrintString( "DEBUG c/sAPI\r\n" ); | funcion que imprime en el puerto serie lo que recibe por parametro |
+| tickConfig( TICKRATE_MS );|configura la frecuencia de ticks|
+| _WFI() |  |
+| gpioToggle(LED3);|activa el pin pasado por parametro |
+
+
+![Mensajes_de_depuración_por_puerto_serie_5_b_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_b_2.png)
+
+![Mensajes_de_depuración_por_puerto_serie_5_b_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_b_2.png)
+
+## 5.c.2 constantes,variables
+
+Se pueden visualizar en la siguiente figura las variables y contantes:
+
+| Nombre | Descripción |
+| ------ | ----------- |
+| TICKRATE_MS | constante que define la frecuencia de tick|
+|LED_TOGGLE_MS| constante que define cuanto tiempo esta en estado alto el led |
+|volatile bool LED_Time_Flag = false; |cariable volatil y booleana que permite saber el estado del led|
+|LED_Toggle_Counter |contador de flancos del led|
+
+![Mensajes_de_depuración_por_puerto_serie_5_c_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_c_1.png)
+
+![Mensajes_de_depuración_por_puerto_serie_5_c_2](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_c_2.png)
 
 # 6 Sensado de Push Buttons
