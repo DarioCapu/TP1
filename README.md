@@ -194,7 +194,8 @@ Para realizar la compilacion condicional de los codigos fuentes de TP_1,TP_2,TP_
 ![Mensajes_de_depuración_por_puerto_serie_5_a_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/Mensajes_de_depuración_por_puerto_serie_5_a_1.png)
 
 ## 4.b configuracion tickhook con la constante TICKRATE_MS
-Se pueden visualizar en la siguiente figura las funciones:
+
+Se pueden  visualizar en el siguiente cuadro el comportamiento del programa para los diferentes casos en que varia la constante TICKRATE_MS (cuanto mayor es el valor de esta constante el cambio de estado del led tarda menos tiempo) :
 
 | TICKRATE_MS  | comportamiento |
 | ------ | ----------- |
@@ -206,13 +207,13 @@ Se pueden visualizar en la siguiente figura las funciones:
 
 ## 4.c configuracion tickhook con la constante LED_TOGGLE_MS
 
-Se pueden  visualizar en el siguiente cuadro el comportamiento del programa para los diferentes casos en que varia la constante LED_TOGGLE_MS :
+Se pueden  visualizar en el siguiente cuadro el comportamiento del programa para los diferentes casos en que varia la constante LED_TOGGLE_MS (cuanto mayor es el valor de esta constante el cambio de estado del led tarda mas tiempo) :
 
 | LED_TOGGLE_MS  | comportamiento |
 | ------ | ----------- |
-| 100 ms |  |
-| 500 ms |  |
-| 1000 ms |  |
+| 100 ms | cambia de estado a mayor velocidad |
+| 500 ms | cambia de estado a velocidad promedio |
+| 1000 ms | cambia de estado lentamente |
 
 ![portabilidad_4_c_1](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/portabilidad_4_c_1.png)
 
