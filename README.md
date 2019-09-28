@@ -312,3 +312,6 @@ Se pueden visualizar en la siguiente tabla los estados posibles para el pulsador
 |transicion a oprimido| se activan todos los estados de salida(todos los leds encendidos)|
 |mantener oprimido |Se mantienen todos los estados de salida(todos los leds)|
 |transicion a no oprimido |se desactivan todos los estados de salida excepto el ultimo(un solo led encendido)|
+
+# Hoja de ruta
+![Hoja de ruta](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/hoja_de_ruta_tp1.png)
