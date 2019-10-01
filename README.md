@@ -6,6 +6,16 @@
 - **Uso del IDE** edición, compilación y depuración de programas.
 - **Uso de GPIO** manejo de Salidas y Entradas Digitales.
 - **Documentación**
+
+# Contenidos
+- [1 IDE](#1-ide)
+- [2 Switches leds](#2-switches-leds)
+- [3 tickHook](#3-tickhook)
+- [4 Portabilidad](#4-portabilidad)
+- [5 Mensajes de depuración por puerto serie](#5-mensajes-de-depuración-por-puerto-serie)
+- [6 Sensado de Push Buttons](#6-sensado-de-push-buttons)
+- [7 Hoja de ruta](#7-hoja-de-ruta)
+
 # 1 IDE
 Se descargó LPCXpreso 8.2.0 y se insatalaron los complementos de OpenOCD, eGit y Yakindu StateChart Tools siguiendo los pasos de la [hoja de ayuda](https://campus.fi.uba.ar/pluginfile.php/307047/mod_resource/content/5/Sistemas_Embebidos-2019_2doC-Instalacion_de_Herramientas-Cruz.pdf) de la materia.
 ![Imagen 00 Activación](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/00_Instalacion_Activacion.png)
@@ -313,5 +323,5 @@ Se pueden visualizar en la siguiente tabla los estados posibles para el pulsador
 |mantener oprimido |Se mantienen todos los estados de salida(todos los leds)|
 |transicion a no oprimido |se desactivan todos los estados de salida excepto el ultimo(un solo led encendido)|
 
-# Hoja de ruta
+# 7 Hoja de ruta
 ![Hoja de ruta](https://raw.githubusercontent.com/DarioCapu/TP1/master/Imagenes/hoja_de_ruta_tp1.png)
